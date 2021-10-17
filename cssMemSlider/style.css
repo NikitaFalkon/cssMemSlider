@@ -106,7 +106,7 @@ label:hover {
 #s3:checked ~ .buttom_div > .texts > .s3,
 #s4:checked ~ .buttom_div > .texts > .s4 {
     display: block;
-    animation: moveright 0.3s;
+    animation: moveright 0.3s, shadow 2s;
 }
 
 @keyframes move {
