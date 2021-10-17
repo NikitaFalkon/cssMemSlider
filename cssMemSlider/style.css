@@ -30,6 +30,7 @@ body {
     display: flex;
     width: 97%;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .slides {
@@ -59,25 +60,18 @@ p {
 }
 
 .inputs {
-    margin-left: 63%;
+    /* margin-left: 63%; */
     margin-right: 0;
     display: flex;
-    /* width: 120px; */
     padding-top: 45px;
-    /* padding-right;: 0px */
 }
 
 .texts {
-    /* margin-right: 70%; */
     display: flex;
-    /* max-width: 720px; */
-    width: 35%; 
     padding-top: 45px;
-    /* padding-right;: 0px */
 }
 
-.tex {
-    /* width: 30%;  */
+.tex { 
     width: 100%; 
     display: none; 
 }
@@ -111,6 +105,9 @@ label:hover {
 #s3:checked ~ .slides > .s3,
 #s4:checked ~ .slides > .s4 {
     display: block;
+    animation: move 0.3s, shadow 1s;
+    
+
 }
 
 #s1:checked ~ .buttom_div > .texts > .s1,
@@ -118,6 +115,23 @@ label:hover {
 #s3:checked ~ .buttom_div > .texts > .s3,
 #s4:checked ~ .buttom_div > .texts > .s4 {
     display: block;
+    animation: moving 12s;
+    /* animation: move 2s ease-in; */
+}
+
+@keyframes move {
+    0% {margin-right: 100%;}
+    100% {margin-right: 0%}
+}
+
+@keyframes shadow {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes moving {
+    0% {height: 0%;}
+    100% {height: 100%;}
 }
 
 @media (max-width: 935px) {
@@ -126,8 +140,50 @@ label:hover {
     }   
 }
 
-@media (max-width: 720px) {
+@media (max-width: 880px) {
+    p {
+        font-size: 23px;
+    }
+
     img {
-        height: 35em;
-    }   
+        height: 30em;
+    }  
+    .buttom_div {
+        display: flex;
+        width: 97%;
+        flex-direction: column-reverse;
+        align-items: center;
+    }  
+
+    .inputs {
+        margin-left: 0;
+        margin-right: 0;        
+        padding-top: 45px;
+    }
+
+    .texts { 
+        text-align: center;
+        align-items: center;
+        width: 100%; 
+    }
+}
+
+@media (max-width: 560px) {
+    img {
+        height: 20em;
+    } 
+
+    p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 350px) {
+    img {
+        height: 14em;
+    }  
+
+    p {
+        font-size: 15px;
+    }
 }
